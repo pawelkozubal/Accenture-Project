@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="style.css">
+  <title>AI Career Advice Generator</title>
+  <style>
+   /* Two-Column Layout */
+.split-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2%; 
+    padding: 2%; 
+    max-width: 90%; 
+    margin: 0 auto;
+    min-height: 80vh; 
+    align-items: stretch; 
+}
+
+.column-left {
+    flex: 1;
+    background: white;
+    padding: 3%; 
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.column-right {
+    flex: 1;
+    background: #090E19;
+    color: white;
+    padding: 3%; 
+    border-radius: 12px;
+    border: 1px solid #a855f7;
+}
+
+label { 
+    display: block; 
+    margin-top: 2%; 
+    font-weight: bold; 
+    color: #333; 
+}
+
+input, select { 
+    width: 100%; 
+    padding: 2%; 
+    margin-top: 1%; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    box-sizing: border-box; 
+}
+
+.submit-btn {
+    background-color: #090E19;
+    color: #a855f7;
+    padding: 3%; 
+    border: 2px solid #a855f7;
+    border-radius: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.submit-btn:hover { 
+    background-color: #a855f7; 
+    color: white; 
+}
+
+#responseText { 
+    white-space: pre-wrap; 
+    margin-top: 3%; 
+    color: #e0e0e0; 
+}
+
+#loadingIndicator { 
+    color: #a855f7; 
+    font-weight: bold; 
+    display: none; 
+    margin-bottom: 2%; 
+}
+    @media (max-width: 800px) { .split-container { flex-direction: column; } }
+  </style>
+</head>
+<body>
+    <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo3.png" alt="Company Logo" class="logo">
+      </a>
+
+      <ul class="nav__links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="teamPage.html">Team</a></li>
+  <li><a href="resource.html">Resource Page</a></li>
+
+  <li>
+    <a href="Advice form.html" style="
+      background-color: #a855f7; 
+      color: white; 
+      padding: 8px 20px; 
+      border-radius: 25px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      display: inline-block; 
+      margin-left: 10px;
+    ">
+      Get AI Advice
+    </a>
+  </li>
+</ul>
+
+      <button title="hamburger-button" class="nav__toggle" id="navToggle" type="button" aria-expanded="false">
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </button>
+    </div>
+
+    <div class="nav__mobile">
+    <nav class="nav__panel">
+        <a href="index.html">Home</a>
+        <a href="teamPage.html">Team</a>
+        <a href="resource.html">Resource Page</a>
+        <a href="Advice form.html" style="
+      background-color: #a855f7; 
+      color: white; 
+      padding: 8px 20px; 
+      border-radius: 25px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      display: inline-block; 
+      margin-left: 10px; ">    
+      Get AI Advice </a>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="split-container">
+    <div class="column-left">
+        <h1>Career Info</h1>
+        <form id="careerForm">
+            <label>Full Name:</label>
+            <input title="name-text" type="text" id="name" required>
+
+            <label>Journey:</label>
+            <select title="journey" id="journey">
+                <option value="student">University Student</option>
+                <option value="graduate">Recent Graduate</option>
+                <option value="work">Returning to work</option>
+                <option value="changer">Career Changer</option>
+            </select>
+
+            <label>Education:</label>
+            <select title="education" id="education">
+                <option value="gcse">GCSE</option>
+                <option value="degree">Graduate Degree</option>
+                <option value="A-Level">A-Levels</option>
+                <option value="BTech">Btech</option>
+            </select>
+
+            <label>Work Style:</label>
+            <select title="work-style" id="work-style">
+                <option value="team">Team Work</option>
+                <option value="remote">Remote Work</option>
+                <option value="Fast">Fast paced Enviroment</option>
+            </select>
+
+            <label>Tech Experience:</label>
+            <select title="tech-exp" id="tech-exp">
+                <option value="none">No experience yet</option>
+                <option value="basic">Basic Coding</option>
+                <option value="Projects">Build some projects</option>
+            </select>
+
+            <label>Interest:</label>
+            <select title="tech-interest" id="tech-interest">
+                <option value="ai">AI and Data</option>
+                <option value="web">Web Development</option>
+                <option value="UXUI">UI/UX</option>
+                <option value="Cloud">Cloud Computing</option>
+            </select>
+
+            <label>Values:</label>
+            <select title="values" id="values">
+                <option value="money">Salary</option>
+                <option value="impact">Impact</option>
+            </select>
+
+            <button type="button" onclick="composePrompt()" id="submitBtn" class="submit-btn">Generate Advice</button>
+        </form>
+    </div>
+
+    <div class="column-right">
+        <h2 style="color:#a855f7">AI Result</h2>
+        <div id="loadingIndicator">✨ AI is thinking...</div>
+        <div id="responseText">Your advice will appear here.</div>
+    </div>
+  </div>
+
+  <script>
+    async function composePrompt() {
+        console.log("Button clicked!"); // Check this in F12 console
+        
+        const loader = document.getElementById('loadingIndicator');
+        const responseBox = document.getElementById('responseText');
+        const btn = document.getElementById('submitBtn');
+
+        // 1. Show loader
+        loader.style.display = 'block';
+        responseBox.textContent = "";
+        btn.disabled = true;
+
+        // 2. Collect Data
+        const formData = {
+            name: document.getElementById('name').value,
+            journey: document.getElementById('journey').value,
+            education: document.getElementById('education').value,
+            workStyle: document.getElementById('work-style').value,
+            techExp: document.getElementById('tech-exp').value,
+            interest: document.getElementById('tech-interest').value,
+            values: document.getElementById('values').value
+        };
+
+        try {
+            // 3. Send to Python
+            const response = await fetch('http://127.0.0.1:5000/generate-prompt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+            responseBox.textContent = result.response;
+        } catch (err) {
+            responseBox.textContent = "Error: Python server not responding.";
+            console.error(err);
+        } finally {
+            loader.style.display = 'none';
+            btn.disabled = false;
+        }
+    }
+  </script>
+</body>
+</html>

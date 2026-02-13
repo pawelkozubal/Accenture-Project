@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Home Page</title>
+</head>
+
+<body>
+
+  <!-- NAV BAR START --> 
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo3.png" alt="Company Logo" class="logo">
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="teamPage.html">Team</a></li>
+        <li><a href="resource.html">Resource Page</a></li>
+      </ul>
+
+      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false">
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </button>
+    </div>
+
+    <div class="nav__mobile">
+      <nav class="nav__panel">
+        <a href="index.html">Home</a>
+        <a href="teamPage.html">Team</a>
+        <a href="resource.html">Resource Page</a>
+      </nav>
+    </div>
+  </header>
+  <!-- NAVBAR END -->
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find your place in tech!</h1>
+      <p>
+        From tech support to software engineering — use our resources to learn your position,
+        or use our form to find your calling.
+      </p>
+
+    <button class="button" type="button" onclick="toggleSection('t1')">
+    Find My Calling!
+    </button>
+    </div>
+  </section>
+
+
+
+  <!-- FORM GOES HERE -->
+  <div id="t1">
+    <div class="split-container">
+    <div class="column-left">
+        <h1>Career Info</h1>
+        <form id="careerForm">
+            <label>Full Name:</label>
+            <input title="name-text" type="text" id="name" required>
+
+            <label>Journey:</label>
+            <select title="journey" id="journey">
+                <option value="student">University Student</option>
+                <option value="recent graduate">Recent Graduate</option>
+                <option value="work">Returning to work</option>
+                <option value="changer">Career Changer</option>
+            </select>
+
+            <label>Education:</label>
+            <select title="education" id="education">
+                <option value="gcse">GCSE</option>
+                <option value="under grad degree">Undergraduate Degree</option>
+                <option value="post grad degree">Postgraduate Degree</option>
+                <option value="A-Level">A-Levels</option>
+                <option value="BTech">B-tech</option>
+                <option value="prefer not to say">Prefer not to say</option>
+            </select>
+
+            <label>Work Style:</label>
+            <select title="work-style" id="work-style">
+                <option value="office">Office</option>
+                <option value="remote">Remote</option>
+                <option value="hybrid">Hybrid</option>
+            </select>
+
+            <label>Tech Experience:</label>
+            <select title="tech-exp" id="tech-exp">
+                <option value="none">None</option>
+                <option value="basic">Basic Coding Knowledge</option>
+                <option value="built projects and completed courses">Built Projects & completed courses</option>
+                <option value="worked in a tech role before">Worked in a tech role before</option>
+            </select>
+            <label>Interest:</label>
+            <select title="tech-interest" id="tech-interest">
+                <option value="ai">AI / Data</option>
+                <option value="web">Web Developer</option>
+                <option value="UXUI">UI/UX</option>
+                <option value="Cloud">Cloud Computing</option>
+                <option value="Data Engineer">Data Engineer</option>
+            </select>
+
+            <label>Values:</label>
+            <select title="values" id="values">
+                <option value="money">Earning a good Salary</option>
+                <option value="positive impact">Positive Impact</option>
+                <option value="creativity">Creativity</option>
+                <option value="flexability">Flexability with remoote work</option>
+                <option value="innovation">Innovation</option>
+            </select>
+
+            <button type="button" onclick="composePrompt()" id="submitBtn" class="submit-btn">Generate Advice</button>
+        </form>
+    </div>
+
+    <div class="column-right">
+        <h2 style="color:#a855f7">AI Result</h2>
+        <div id="loadingIndicator">✨ AI is thinking...</div>
+        <div id="responseText">Your advice will appear here.</div>
+    </div>
+  </div>
+  </div>
+
+  <section class="mission">
+    <h2>Our mission</h2>
+    <p>
+      Our mission is to help school leavers discover the opportunities waiting for them, and to help them discover their potential. 
+      Whether you're interested in coding, design or cybersecurity we will help find the correct direction for you!
+    </p>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleTeams.css">
+    <Script type="text/javascript" src="teamScript.js" defer></Script>
+    <title>Teams Page</title>
+    
+</head>
+<body>
+ <header class="nav" id="nav">
+  <div class="nav__inner">
+
+    <!-- LEFT: LOGO -->
+    <a href="index.html" class="brand">
+      <img src="images/logo3.png" alt="Company Logo" class="logo">
+    </a>
+
+    <!-- CENTER: NAV LINKS -->
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="teamPage.html">Team</a></li>
+      <li><a href="resource.html">Resource Page</a></li>
+    </ul>
+
+    <!-- RIGHT: HAMBURGER -->
+    <button class="nav__toggle" id="navToggle" aria-expanded="false">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="nav__mobile">
+    <nav class="nav__panel">
+      <a href="index.html">Home</a>
+      <a href="teamPage.html">Team</a>
+      <a href="resource.html">Resource Page</a>
+    </nav>
+  </div>
+</header>
+    
+    <main>
+
+    <!-- TEAM DESCRIPTION -->
+    <section class="panel team-description">
+      <h1>Our Team</h1>
+      <p>
+        We are a team full of mixed strengths and weaknesses that has partneterd with Accenture to make this project and help you find your designated career path
+      </p>
+    </section>
+
+    <!-- TEAM MEMBERS -->
+    <section class="team-avatars" id="avatars">
+      <!-- injected by JS -->
+    </section>
+
+    <!-- NAME + EXPERIENCE -->
+    <section class="info-grid">
+      <div class="panel name-card">
+          <div class="image-wrapper">
+            <img id="profileImage" src="" alt="">
+              <div class="overlay-name" id="profileName"></div>
+          </div>
+      </div>
+
+      <div class="panel">
+        <div class="label">Past Experience</div>
+        <div class="content" id="experience"></div>
+      </div>
+
+      <div class="panel">
+        <div class="label">Achievements</div>
+        <div class="content" id="achievements"></div>
+      </div>
+    </section>
+
+    <!-- PROJECT CONTRIBUTIONS -->
+    <section class="panel full-width">
+      <div class="label">Project Contributions</div>
+      <div class="content" id="contributions"></div>
+    </section>
+
+  </main>
+
+    
+</body>
+</html>

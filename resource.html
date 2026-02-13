@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resourceStyle.css">
+    <Script type="text/javascript" src="resourceScript.js" defer></Script>
+    <title>ResourcePage</title>
+</head>
+<body> 
+
+<!-- NAV BAR START --> 
+
+ <header class="nav" id="nav">
+  <div class="nav__inner">
+
+    <!-- LEFT: LOGO -->
+    <a href="index.html" class="brand">
+      <img src="images/logo3.png" alt="Company Logo" class="logo">
+    </a>
+
+    <!-- CENTER: NAV LINKS -->
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="teamPage.html">Team</a></li>
+      <li><a href="resource.html">Resource Page</a></li>
+    </ul>
+
+    <!-- RIGHT: HAMBURGER -->
+    <button class="nav__toggle" id="navToggle" aria-expanded="false">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="nav__mobile">
+    <nav class="nav__panel">
+      <a href="index.html">Home</a>
+      <a href="teamPage.html">Team</a>
+      <a href="resource.html">Resource Page</a>
+    </nav>
+  </div>
+</header>
+
+<!-- NAVBAR END -->
+
+<main class="resources">
+
+    <header class="resources__header">
+      <h1 class="resources__title">Resource Overview</h1>
+      <p class="resources__intro">
+        Here you will find some basic information about each role listed. Click a role to reveal an overview,
+        average salary, and a link to learn more.
+      </p>
+    </header>
+
+    <section class="resources__list">
+
+      <!-- ITEM 1 -->
+
+      <!--Creates a button whilst preventing button from making user leave page upon clicking. 
+      
+      Togglesection runs the JavaScript. 
+
+      Aria is an accessability feature to tell screen reader what element button controls and states that the section is collapsed, changes to true-->
+      <button class="resource-btn" type="button" onclick="toggleSection('t1')" aria-controls="t1" aria-expanded="false">
+        App Development
+      </button>
+
+      <!--This matches the ID up to the toggle of the button with some styling, also hides panel as default-->
+      <div id="t1" class="resource-panel" style="display:none;">
+
+        <h3>A Brief Overview</h3>
+        <p>
+          App Development focuses on designing, building, and maintaining applications for mobile devices and desktops.
+          It involves user interface design, coding, testing, and optimization to ensure apps are efficient, secure,
+          and provide a smooth user experience across different platforms.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          App Developer (Mobile/Desktop) — ~£40,000 – £60,000<br>
+          App dev roles such as mobile developers often align with general software dev pay; figures vary by experience and stack.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/app-developer" target="_blank" rel="noreferrer">click here</a>.
+          <!-- ^ This adds an embedded link to the text "Click Here", Target blank makes sure its a new tab
+          rel="noreferrer" prevents the browser from sending referrer info to the site-->
+        </p>
+      </div>
+
+      <!-- ITEM 2 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t2')" aria-controls="t2" aria-expanded="false">
+        Cloud Computing
+      </button>
+      <div id="t2" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          Cloud Computing involves using internet-based servers and services to store data, manage applications,
+          and deliver computing resources on demand. It enables scalability, flexibility, and cost efficiency for businesses
+          while supporting modern technologies such as remote collaboration and data-driven systems.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Cloud Engineer — ~£60,000 – £95,000<br>
+          Cloud specialists (engineers/architects) tend to earn above average, especially with AWS/Azure skills.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://www.youthemployment.org.uk/careers-hub-job-role/cloud-computing-careers/" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+      <!-- ITEM 3 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t3')" aria-controls="t3" aria-expanded="false">
+        Cyber Security
+      </button>
+      <div id="t3" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          Cyber Security is dedicated to protecting computer systems, networks, and digital information from cyber threats.
+          This field covers risk assessment, threat detection, ethical hacking, and security best practices to safeguard sensitive data
+          and maintain system integrity.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Cyber Security Analyst / Specialist — ~£40,000 – £75,000<br>
+          Varies with experience; security can go higher for senior/certified roles.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/cyber-intelligence-officer" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+      <!-- ITEM 4 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t4')" aria-controls="t4" aria-expanded="false">
+        Data Analysis
+      </button>
+      <div id="t4" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          Data Analysis focuses on collecting, cleaning, and examining data to identify patterns, trends, and insights.
+          Analysts use statistical methods, tools, and visualization techniques to help organizations make informed decisions and improve performance.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Data Analyst — ~£39,000 – £65,000<br>
+          Data analysts at entry to mid levels; senior data roles typically pay more.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/data-analyst-statistician" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+      <!-- ITEM 5 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t5')" aria-controls="t5" aria-expanded="false">
+        Database Administrators
+      </button>
+      <div id="t5" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          A Database Administrator is responsible for ensuring that an organisation’s data systems are secure, available,
+          and performing efficiently. This role involves planning, implementing, and maintaining database systems to support business needs,
+          monitoring performance, and ensuring data integrity and backup procedures are in place.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Typical range: ~£40,000 – £60,000 per year.<br>
+          Average mid-level pay: ~£45,000 – £47,000 per year (varies by employer/location).
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/database-administrator" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+      <!-- ITEM 6 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t6')" aria-controls="t6" aria-expanded="false">
+        Game Development
+      </button>
+      <div id="t6" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          Game Development combines programming, creative design, and storytelling to produce interactive digital games.
+          It includes game mechanics, graphics, sound, and testing to create engaging experiences across platforms such as PCs, consoles, and mobile devices.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Game Developer — ~£36,000 – £52,500<br>
+          Game dev salaries are often slightly below general software dev averages, with variation by studio size.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/computer-games-developer" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+      <!-- ITEM 7 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t7')" aria-controls="t7" aria-expanded="false">
+        Software Engineering
+      </button>
+      <div id="t7" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          Software Engineering involves applying structured principles and methodologies to design, develop, test, and maintain software systems.
+          It emphasizes reliability, efficiency, collaboration, and long-term maintenance of complex applications.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Software Engineer — ~£50,000 – £90,000+<br>
+          General software engineers average around £50k–£60k, with higher pay in larger firms or senior roles.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/software-developer" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+      <!-- ITEM 8 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t8')" aria-controls="t8" aria-expanded="false">
+        Tech Support
+      </button>
+      <div id="t8" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          Tech Support focuses on assisting users with technical issues related to hardware, software, and network systems.
+          It involves troubleshooting, problem-solving, system maintenance, and customer communication to ensure technology operates smoothly.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Tech Support / IT Support — ~£22,000 – £45,000<br>
+          Tech support roles (helpdesk/IT support) are typically on the lower end of the tech pay scale.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/it-support-technician" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+      <!-- ITEM 9 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t9')" aria-controls="t9" aria-expanded="false">
+        Web Design / Development
+      </button>
+      <div id="t9" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          Web Design and Development involves creating and maintaining websites that are visually appealing, responsive, and functional.
+          This field combines design principles, front-end and back-end development, and performance optimization to deliver effective online experiences.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Web Designer / Developer — ~£35,000 – £55,000<br>
+          Web designers and developers sit around mid-level tech wages; UI/UX design often pays toward the top of this range.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/web-developer" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+      <!-- ITEM 10 -->
+      <button class="resource-btn" type="button" onclick="toggleSection('t10')" aria-controls="t10" aria-expanded="false">
+        Interface Designers and UX Designers
+      </button>
+      <div id="t10" class="resource-panel" style="display:none;">
+        <h3>A Brief Overview</h3>
+        <p>
+          Interface Designers and UX Designers focus on creating intuitive, accessible, and engaging digital experiences for users.
+          Their work involves researching user needs, designing layouts and interactions, testing usability, and refining designs to ensure products are easy to use,
+          visually consistent, and aligned with user expectations across different platforms and devices.
+        </p>
+
+        <h3>Average Base Salary</h3>
+        <p>
+          Interface & UX Designer — ~£50,000 – £60,000<br>
+          UX/UI design roles cluster around this range with variation by experience and seniority.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+          For more information, please
+          <a href="https://nationalcareers.service.gov.uk/job-profiles/ux-designer" target="_blank" rel="noreferrer">click here</a>.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>
